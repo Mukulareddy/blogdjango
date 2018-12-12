@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}All Entries{% endblock title %}
+
+{% block content %}
+  <h1> MyBlog </h1> | <a href="/add/">Create</a>
+  <hr/>
+
+  {% for entry in items %}
+  <h2 style="color:red"><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h2>
+  <p>{{ entry.text }}</p>
+  <p>Category:{{ entry.category }}</p>
+  {% endfor %}
+
+{% endblock content %}
